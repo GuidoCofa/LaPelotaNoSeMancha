@@ -26,16 +26,16 @@ define config.check_conflicting_properties = True
 ## Los colores del texto de la interfaz
 
 ## El color enfatizado usado en la interfaz para subrayar texto.
-define gui.accent_color = '#0099cc'
+define gui.accent_color = '#8f6d6d'
 
 ## El color del botón de texto cuando no está seleccionado ni enfocado.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#ffffff'
 
 ## El color 'small' se usa para el texto pequeño, que necesita destacar más.
 define gui.idle_small_color = '#aaaaaa'
 
 ## El color usado en botones y barras que ganan foco.
-define gui.hover_color = '#66c1e0'
+define gui.hover_color = '#ff0000'
 
 ## El color del botón de texto seleccionado pero no enfocado. Un botón está
 ## seleccionado si indica el valor actual de la pantalla o preferencia.
@@ -57,13 +57,13 @@ define gui.interface_text_color = '#ffffff'
 ## Tipos y tamaños de letra ####################################################
 
 ## El tipo de letra del texto del juego
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/Monserrat.ttf"
 
 ## El tipo de letra de los nombres de personajes
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/Oswald.ttf"
 
 ## El tipo de letra del texto externo al juego.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Monserrat.ttf"
 
 ## El tamaño normal del texto del diálogo.
 define gui.text_size = 22
@@ -72,7 +72,7 @@ define gui.text_size = 22
 define gui.name_text_size = 30
 
 ## El tamaño del texto en la interfaz.
-define gui.interface_text_size = 22
+define gui.interface_text_size = 30
 
 ## El tamaño de etiquetas en la interfaz.
 define gui.label_text_size = 24

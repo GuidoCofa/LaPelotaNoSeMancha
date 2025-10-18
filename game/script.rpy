@@ -22,7 +22,8 @@ define narrator = Character(None)                   # Narrador sin nombre
 image hospital_suelo = "images/hospital_suelo.png"
 image hospital_alberto = "images/hospital_alberto.jpg"
 image barrio_cancha = "images/barrio_cancha.png"
-
+image casa = "images/casa.jpg"
+image calle = "images/calle.jpg"
 # =========================================
 # ACTO 1 - ESCENA 1: EL HOSPITAL
 # =========================================
@@ -54,7 +55,7 @@ label start:
             jump rendirse
 
 # =========================================
-# RUTA: PELEAR POR TU VIDA
+# PELEAR POR TU VIDA
 # =========================================
 
 label luchar:
@@ -87,7 +88,7 @@ label luchar:
     jump escena2
 
 # =========================================
-# RUTA: RENDIRSE
+# RENDIRSE
 # =========================================
 
 label rendirse:
@@ -104,7 +105,7 @@ label rendirse:
 
 label escena2:
 
-    scene casa_pobre
+    scene casa
     with fade
     play ambient "audio/murmullos.ogg" loop
 

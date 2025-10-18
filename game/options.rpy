@@ -13,13 +13,16 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
+define config.main_menu_music = "audio/mainsound.mp3"
+
+
 define config.name = _("LaPelotaNoSeMancha")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
 ## Ajústalo a 'False' para ocultar el título.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## Versión del juego.
