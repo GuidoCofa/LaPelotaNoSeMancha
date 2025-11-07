@@ -24,6 +24,7 @@ image hospital_alberto = "images/hospital_alberto.jpg"
 image cancham = "images/cancha_manager.png"
 image casa = "images/casa.jpg"
 image calle = "images/calle.jpg"
+image canchac = "images/cancha_chicos.png"
 # =========================================
 # ACTO 1 - ESCENA 1: EL HOSPITAL
 # =========================================
@@ -123,7 +124,7 @@ label escena2:
 
     u "Gracias pa, yo también te 'quiero' mucho."
 
-    scene cancha
+    scene canchac
     play ambient "audio/partido_bajo.mp3" loop
     with fade
 
@@ -134,8 +135,7 @@ label escena2:
     c2 "Ni idea amigo, vos seguí jugando que estás jugando re piola."
 
     stop ambient
-    scene cancham
-    with dissolve
+    scene canchac
 
     f "Vos, pibe... el negrito morocho de pelo corto. Vení para acá que quiero hablar algo con vos."
 
