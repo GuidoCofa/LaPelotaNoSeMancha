@@ -21,7 +21,7 @@ define narrator = Character(None)                   # Narrador sin nombre
 
 image hospital_suelo = "images/hospital_suelo.png"
 image hospital_alberto = "images/hospital_alberto.jpg"
-image barrio_cancha = "images/barrio_cancha.png"
+image cancham = "images/cancha_manager.png"
 image casa = "images/casa.jpg"
 image calle = "images/calle.jpg"
 # =========================================
@@ -134,12 +134,12 @@ label escena2:
     c2 "Ni idea amigo, vos seguí jugando que estás jugando re piola."
 
     stop ambient
-    scene manager
+    scene cancham
     with dissolve
 
     f "Vos, pibe... el negrito morocho de pelo corto. Vení para acá que quiero hablar algo con vos."
 
-    scene cancha
+    scene cancham
     with fade
 
     u "¿Qué pasó señor? Estoy un poco ocupado."
@@ -199,7 +199,7 @@ label escena4:
     scene calle
     with fade
 
-    u "Este mogólico se viene a hacer el zarpado... le voy a cerrar la boca cuando llegue a primera."
+    u "Este gordo borracho viene a hacerse el zarpado... Le voy a cerrar la boca cuando llegue a primera."
 
     jump escena5
 
@@ -211,8 +211,10 @@ label escena4:
 label escena5:
 
     scene cancha
-    play ambient "audio/cancha_ambiente.mp3" loop
     with fade
+
+    # 🎵 Inicia el audio de entrenamiento en loop para toda la escena 5
+    $ renpy.music.play("audio/entrenamiento.mp3", channel="music", loop=True)
 
     u "Hola, soy Ulises. Vengo por lo de la oferta del señor Fabrizio."
     f "Perfecto, ya llegó el último pibe. Seba, podemos arrancar."
@@ -235,12 +237,20 @@ label escena5:
 label ignorar:
 
     u "Ajá, seguro. Nos vemos en el partido."
+
+    # 🛑 Detenemos el audio al pasar a la siguiente escena
+    $ renpy.music.stop(channel="music", fadeout=1.0)
+
     jump escena6
 
 
 label discutir:
 
     u "¿Qué dijiste, gil? En la cancha te lo demuestro."
+
+    # 🛑 Detenemos el audio al pasar a la siguiente escena
+    $ renpy.music.stop(channel="music", fadeout=1.0)
+
     jump escena6
 
 
