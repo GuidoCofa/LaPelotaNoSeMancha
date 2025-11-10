@@ -3,17 +3,16 @@
 # =========================================
 
 define a = Character("Alberto", color="#1E90FF")       # Azul
-define g = Character("Gabriela", color="#E91E63")      # Rosa
 define m = Character("Marido", color="#FFA500")        # Naranja
-define e1 = Character("Enfermero 1", color="#4CAF50")  # Verde
-define e2 = Character("Enfermero 2", color="#9C27B0")  # Violeta
+define d1 = Character("Doctor 1", color="#4CAF50")  # Verde
+define d2 = Character("Doctor 2", color="#9C27B0")  # Violeta
 define u = Character("Ulises", color="#00BFFF")     # Celeste
 define n = Character("Noelia", color="#FF69B4")     # Rosa claro
 define f = Character("Fabrizio", color="#FFD700")   # Amarillo
 define s = Character("Sebastián", color="#8B0000")  # Rojo oscuro
 define c1 = Character("Chico 1", color="#ADFF2F")   # Verde claro
 define c2 = Character("Chico 2", color="#7FFFD4")   # Aguamarina
-define narrator = Character(None)                   # Narrador sin nombre
+define narrator = Character(None) # Narrador sin nombre
 
 # =========================================
 # DECLARACIÓN DE IMÁGENES
@@ -25,6 +24,9 @@ image cancham = "images/cancha_manager.png"
 image casa = "images/casa.jpg"
 image calle = "images/calle.jpg"
 image canchac = "images/cancha_chicos.png"
+image hospital_rendirse = "images/hospital_rendirse.jpg"
+image noelia_doc = "images/noeliacondoc.jpg"
+
 # =========================================
 # ACTO 1 - ESCENA 1: EL HOSPITAL
 # =========================================
@@ -36,14 +38,14 @@ label start:
     # 🔊 Murmullos de fondo — usando canal MUSIC (más estable que ambient)
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
 
-    e1 "¡Está sangrando mucho! Necesitamos que los doctores se apuren en la operación."
-    e2 "¡Bajen un cambio! Estamos laburando lo mejor que podemos. Enfermeras, saquen a la familia y que quede solo el marido de la mujer."
+    d1 "¡Está sangrando mucho! Necesitamos que los doctores se apuren en la operación."
+    d2 "¡Bajen un cambio! Estamos laburando lo mejor que podemos. Enfermeras, saquen a la familia y que quede solo el marido de la mujer."
     m "Ojo con el pibe, tengan cuidado que es el futuro de mi familia. Nos va a sacar de esta situación nefasta y nos va a volver millonarios."
 
     # 🔊 Grito de mujer — detenemos murmullos antes de reproducirlo
     $ renpy.music.stop(channel="music", fadeout=1.5)
     $ renpy.music.play("audio/gritos_mujer.mp3", channel="sound")
-    g "¡¡¡AHHHH!!!... ¡Cómo duele, por favor que termine esto rápido, por el amor de Dios!"
+    n "¡¡¡AHHHH!!!... ¡Cómo duele, por favor que termine esto rápido, por el amor de Dios!"
     $ renpy.music.stop(channel="sound")
 
     "Tu vida pende de un hilo..."
@@ -70,15 +72,15 @@ label luchar:
     with fade
 
     $ renpy.music.play("audio/bebe_llorando.mp3", channel="sound")
-    g "Ahhh, qué alivio; no aguantaba más, necesitaba soltarlo. Qué lindo es por Dios, lo amo."
+    n "Ahhh, qué alivio; no aguantaba más, necesitaba soltarlo. Qué lindo es por Dios, lo amo."
     $ renpy.music.stop(channel="sound")
 
-    g "Mirá Alberto, qué lindo es nuestro nene."
+    n "Mirá Alberto, qué lindo es nuestro nene."
 
     scene hospital_alberto
     with dissolve
 
-    a "Qué bien, Gabriela... este pendejo nos va a sacar adelante."
+    a "Qué bien, Noelia... este pendejo nos va a sacar adelante."
     a "Va a estar obligado a jugar a la pelota toda su vida. ¡Jajajajaja!"
 
     scene black
@@ -94,13 +96,34 @@ label luchar:
 
 label rendirse:
 
-    $ renpy.music.stop(channel="music", fadeout=1.0)
-    $ renpy.music.stop(channel="sound", fadeout=1.0)
+    scene hospital_rendirse
+    with fade
 
+    d1 "Señora, lamentamos informarle que su hijo nació fallecido. Nuestras más sinceras condolencias."
+
+    n "¡¡NOOOOOO!! No me pueden estar diciendo esto, por favor, tiene que ser mentira. ¿O no es un chiste, Alberto?"
+
+    a "Ni me hables, mujer. Un solo trabajo tenías: dar a luz a mi futuro, y no lo hiciste. No te quiero volver a ver en mi vida."
+
+    narrator "Alberto sale de la habitación..."
+
+    scene noelia_doc
+    with fade
+   
+    n "¡Alberto, volvé! Te necesito. Tu hijo sigue acá, te lo juro. ¡Es todo una mentira de los doctores! ¿O no, doctor?"
+
+    d2 "... Mis más sinceras condolencias, señora. La dejaremos sola para que pueda procesar todo lo que está pasando."
+
+    # 🔊 Sollozos de fondo
+    $ renpy.music.play("audio/llantomujer.mp3", channel="sound")
+    n "¿Por qué, Dios? ¿Por qué me hacés esto a mí? ¿Qué hice mal? Decímelo."
+    $ renpy.music.stop(channel="sound")
+
+    # Fundido final
     scene black
     with fade
 
-    centered "Game Over"
+    centered "Fin del juego. FINAL MALO."
 
     return
 
@@ -188,18 +211,19 @@ label escena4:
 
     a "Noelia me tené’ cansao con que no me dejás tomarme una birrita con los pibes."
     n "Disculpá que no me guste ver al pelotudo de mi marido en pedo como un linyera."
-    a "¡Vos y tu pendejo de mierda me tienen las bolas llenas!"
+    a "¡Vos y tu pendejo de mierda me tienen las bolas al plato, Mujer!"
+    a "¡El fracasado ese que se cree que va a ser futbolista, y vos que no me dejás hacer nada!"
 
     stop ambient
     u "Bueno, que me bardees a mí me da lo mismo, ¡pero con mamá no, viejo de mierda!"
-    a "¡Andate antes de que te cague a sopapos!"
-    u "¿Sabés qué? Me voy. Me voy a las pruebas del Saint Lawrence."
+    a "¡Las pelotas llenas me tenés, pendejo! ¡VOLÁ DE ACÁ ANTES DE QUE TE CAGUE A SOPAPOS!"
+    u "¿Sabés qué? Tenés razón: Me voy a la mierda, pelotudo. ¿Y sabés adónde? A unas pruebas para jugar en Saint Lawrence."
 
     play sound "audio/puerta.mp3"
     scene calle
     with fade
 
-    u "Este gordo borracho viene a hacerse el zarpado... Le voy a cerrar la boca cuando llegue a primera."
+    u "Este borracho gil viene a hacerse el zarpado... Le voy a cerrar la boca cuando llegue a primera."
 
     jump escena5
 
@@ -216,13 +240,16 @@ label escena5:
     # 🎵 Inicia el audio de entrenamiento en loop para toda la escena 5
     $ renpy.music.play("audio/entrenamiento.mp3", channel="music", loop=True)
 
-    u "Hola, soy Ulises. Vengo por lo de la oferta del señor Fabrizio."
+    u "Hola, soy Ulises. Vengo por la oferta del señor Fabrizio."
     f "Perfecto, ya llegó el último pibe. Seba, podemos arrancar."
     s "Bueno muchachos, hoy se juegan cambiar sus vidas."
 
     narrator "Pasaron 15 minutos de charla."
 
     u "Al fin terminaron de hablar, ya arranca el partido."
+    
+    # 🛑 Detenemos el audio al pasar a la siguiente escena
+    $ renpy.music.stop(channel="music", fadeout=1.0)
 
     c1 "Eh vos, negrito, ¿qué hacés acá? ¿Te perdiste?"
     c2 "Sí, villerito, tomatelas que este no es lugar para vos."
@@ -238,8 +265,7 @@ label ignorar:
 
     u "Ajá, seguro. Nos vemos en el partido."
 
-    # 🛑 Detenemos el audio al pasar a la siguiente escena
-    $ renpy.music.stop(channel="music", fadeout=1.0)
+  
 
     jump escena6
 
@@ -248,8 +274,6 @@ label discutir:
 
     u "¿Qué dijiste, gil? En la cancha te lo demuestro."
 
-    # 🛑 Detenemos el audio al pasar a la siguiente escena
-    $ renpy.music.stop(channel="music", fadeout=1.0)
 
     jump escena6
 
