@@ -194,8 +194,23 @@ label aceptar_trato:
 
 label rechazar_trato:
 
-    u "No gracias, prefiero seguir jugando con mis amigos."
-    f "Una lástima, pibe. Podrías haber cambiado tu destino."
+    scene cancham
+    with fade
+
+    u "La posta: no tenés pinta ni en pedo de manager. Volá de acá, viejo, y tocá pa' allá."
+
+    f "Te vas a arrepentir toda tu vida, pendejo fracasado. Vas a seguir viviendo tu vida miserable en esta villa llena de negros."
+
+    "El manager se va de la escena."
+
+    u "Viejo gagá, por Dios. ¡EH, MUCHACHOS! Ahí voy, ya terminé con el pancho este."
+
+    # Fundido y texto final
+    scene black
+    with fade
+
+    centered "FINAL NORMAL."
+
     return
 
 
