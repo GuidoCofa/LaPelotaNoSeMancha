@@ -26,13 +26,38 @@ image hospital_suelo = "images/hospital_suelo.png"
 image hospital_alberto = "images/hospital_alberto.jpg"
 image cancham = "images/cancha_manager.png"
 image casa = "images/casa.png"
-image calle = "images/calle.jpg"
+image calle = "images/calle.png"
 image canchac = "images/cancha_chicos.png"
 image hospital_rendirse = "images/hospital_rendirse.jpg"
 image noelia_doc = "images/noeliacondoc.jpg"
 image entraalberto = "images/entraalberto.png"
 image canchamu = "images/canchamu.png"
-
+image canchaentrenamiento = "images/canchaentrenamiento.png"
+image casatilt = "images/casatilt.png"
+image chicosmolestan = "images/chicos_molestan.png"
+image ultilt = "images/ultilt.png"
+image ulisessolo = "images/ulisessolo.png"
+image partido_1 = "images/partido_1.png"
+image partido_2 = "images/partido_2.png"
+image partido_3 = "images/partido_3.png"
+image partido_4 = "images/partido_4.png"
+image partido_5 = "images/partido_5.png"
+image partido_6 = "images/partido_6.png"
+image partido_7 = "images/partido_7.png"
+image partido_8 = "images/partido_8.png"
+image partido_9 = "images/partido_9.png"
+image partido_11 = "images/partido_11.png"
+image partido_12 = "images/partido_12.png"
+image partido_13 = "images/partido_13.png"
+image partido_14 = "images/partido_14.png"
+image partido_15 = "images/partido_15.png"
+image partido_16 = "images/partido_16.png"
+image partido_falta = "images/partido_falta.png"
+image vestuario_listadenombres_preocupado = "images/vestuario_listadenombres_preocupado.png"
+image vestuario_reganiado = "images/vestuario_reganiado.png"
+image vestuario_solo = "images/vestuario_solo.png"
+image vestuario_listadenombres_triste = "images/vestuario_listadenombres_triste.png"
+image vestuario_listadenombres_feliz = "images/vestuario_listadenombres_feliz.png"
 
 # =========================================
 # ACTO 1 - ESCENA 1: EL HOSPITAL
@@ -46,8 +71,8 @@ label start:
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
 
     d1 "¡Está sangrando mucho! Necesitamos que los doctores se apuren en la operación."
-    d2 "¡Bajen un cambio! Estamos laburando lo mejor que podemos. Enfermeras, saquen a la familia y que quede solo el marido de la mujer."
-    m "Ojo con el pibe, tengan cuidado que es el futuro de mi familia. Nos va a sacar de esta situación nefasta y nos va a volver millonarios."
+    d2 "¡Por favor, tranquilos! Necesitamos concentrarnos para evitar una tragedia. Enfermera, saque a la familia y que solo se quede el marido de la mujer."
+    m "Ojo con el pibe, tengan cuidado, que es el futuro de mi familia. Él Nos va a sacar de esta situación nefasta en la que vivimos, y nos va a volver millonarios."
 
     # 🔊 Grito de mujer — detenemos murmullos antes de reproducirlo
     $ renpy.music.stop(channel="music", fadeout=1.5)
@@ -79,7 +104,7 @@ label luchar:
     with fade
 
     $ renpy.music.play("audio/bebe_llorando.mp3", channel="sound")
-    n "Ahhh, qué alivio. Qué lindo es, por Dios, lo amo. Mirá, Alberto, qué lindo es nuestro nene."
+    n "Ahhh, qué alivio. Qué lindo es, por Dios, lo amo."
     $ renpy.music.stop(channel="sound")
 
     n "Mirá Alberto, qué lindo es nuestro nene."
@@ -87,8 +112,7 @@ label luchar:
     scene hospital_alberto
     with dissolve
 
-    a "Qué bien, Noelia... este pendejo nos va a sacar adelante."
-    a "Va a estar obligado a jugar a la pelota toda su vida. ¡Jajajajaja!"
+    a "Qué bien, Noelia... Más le vale al pendejo este sacarnos adelante, ¡Jajaja"
 
     scene black
     with fade
@@ -106,11 +130,11 @@ label rendirse:
     scene hospital_rendirse
     with fade
 
-    d1 "Señora, lamentamos informarle que su hijo nació fallecido. Nuestras más sinceras condolencias."
+    d1 "Señora, lamentamos informarle que su hijo falleció. Nuestras más sinceras condolencias."
 
     n "¡¡NOOOOOO!! No me pueden estar diciendo esto, por favor, tiene que ser mentira. ¿O no es un chiste, Alberto?"
 
-    a "Ni me hables, mujer. Un solo trabajo tenías: dar a luz a mi futuro, y no lo hiciste. No te quiero volver a ver en mi vida."
+    a "Ni me hables, mujer. Un solo trabajo tenías: Dar a luz a mi futuro, y no lo hiciste. No te quiero volver a ver en mi vida."
 
     scene noelia_doc
     with fade
@@ -128,7 +152,7 @@ label rendirse:
     scene black
     with fade
 
-    centered "Fin del juego. FINAL MALO."
+    centered "{size=45}{b}FINAL MALO{/b}{/size}"
 
     return
 
@@ -156,7 +180,7 @@ label escena2:
     u "Gracias pa, yo también te 'quiero' mucho."
 
     scene canchac
-    play ambient "audio/partido_potrero.mp3" loop
+    $ renpy.music.play("audio/partido_potrero.mp3", channel="sound")
     with fade
 
     u "¿Qué onda locuras? ¿Sale un fulbito?"
@@ -168,13 +192,13 @@ label escena2:
     stop ambient
     scene canchac
 
-    f "Vos, pibe... el negrito morocho de pelo corto. Vení para acá que quiero hablar algo con vos."
+    f "Vos, pibe... el negrito morocho de pelo corto. Vení para acá que quiero hablar con vos."
 
     scene canchamu
     with fade
 
     u "¿Qué pasó señor? Estoy un poco ocupado."
-    f "Eh pibe, hablame con respeto. Soy Fabrizio, manager del Club Atlético Saint Lawrence. Estoy reclutando jóvenes promesas. ¿Querés formar parte de la reserva del club?"
+    f "Eh pibe, hablame con respeto. Mi nombre es Fabrizio, mánager del Club Atlético Saint Lawrence. Estoy reclutando jóvenes promesas que busquen cambiar sus miserables vidas. Quería saber si te interesaría formar parte de la reserva del club"
 
     menu:
         "Aceptar el trato":
@@ -191,11 +215,12 @@ label aceptar_trato:
     scene cancham
     with fade
     u "Bueno señor Fabrizio, acepto el trato. ¿Cuándo arranco a jugar?"
-    f "Tranquilo pibe, primero andá a tu casa, bañate, y yo te llamo. Las pruebas son el lunes."
-    u "Bueno, mi número está acá, llámeme cuando quiera."
+    f "Tranquilo pibe no te apures, primero andá a tu casa, pegate un baño, y yo te llamo. Pasame tu teléfono. Te aviso que las pruebas son el próximo lunes."
+    u "Bueno, dale. Mi número es este."
     centered "Una semana después..."
     jump escena4
 
+    $ renpy.music.stop(channel="sound")
 
 # =========================================
 # ESCENA 3B: RECHAZA
@@ -206,7 +231,7 @@ label rechazar_trato:
     scene canchamu
     with fade
 
-    u "La posta: no tenés pinta ni en pedo de manager. Volá de acá, viejo, y tocá pa' allá."
+    u "La posta: no tenés pinta ni en pedo de manager. Volá de acá, y tocá pa' allá."
 
     f "Te vas a arrepentir toda tu vida, pendejo fracasado. Vas a seguir viviendo tu vida miserable en esta villa llena de negros."
 
@@ -215,8 +240,9 @@ label rechazar_trato:
     # Fundido y texto final
     scene black
     with fade
+    $ renpy.music.stop(channel="sound")
 
-    centered "FINAL NORMAL."
+    centered "{size=45}{b}FINAL NORMAL{/b}{/size}"
 
     return
 
@@ -226,19 +252,21 @@ label rechazar_trato:
 # =========================================
 
 label escena4:
-
+    $ renpy.music.stop(channel="sound")
     scene casana
     play ambient "audio/gritos_discusion.mp3" loop
     with fade
 
-    a "Noelia me tené’ cansao con que no me dejás tomarme una birrita con los pibes."
-    n "Disculpá que no me guste ver al pelotudo de mi marido en pedo como un linyera."
+    a "Noelia me tené’ cansao' con la mierda ezta que no me dejás tomarme una birrita con los pibes."
+    n "Disculpá que no me guste ver al boludo de mi marido como un linyera en pedo."
     a "¡Vos y tu pendejo de mierda me tienen las bolas al plato, Mujer!"
     a "¡El fracasado ese que se cree que va a ser futbolista, y vos que no me dejás hacer nada!"
 
     stop ambient
-    u "Bueno, que me bardees a mí me da lo mismo, ¡pero con mamá no, viejo de mierda!"
-    a "¡Las pelotas llenas me tenés, pendejo! ¡VOLÁ DE ACÁ ANTES DE QUE TE CAGUE A SOPAPOS!"
+    scene casatilt
+    with fade
+    u "Bueno, que me bardees a mí me da lo mismo, pero con mamá no, viejo de mierda"
+    a "¡LAS PELOTAS LLENAS ME TENÉS, PENDEJO! ¡VOLÁ DE ACÁ ANTES DE QUE TE CAGUE A SOPAPOS!"
     u "¿Sabés qué? Tenés razón: Me voy a la mierda, pelotudo. ¿Y sabés adónde? A unas pruebas para jugar en Saint Lawrence."
 
     play sound "audio/puerta.mp3"
@@ -256,25 +284,26 @@ label escena4:
 
 label escena5:
 
-    scene cancha
+    scene canchaentrenamiento
     with fade
 
     # 🎵 Inicia el audio de entrenamiento en loop para toda la escena 5
     $ renpy.music.play("audio/entrenamiento.mp3", channel="music", loop=True)
 
-    u "Hola, soy Ulises. Vengo por la oferta del señor Fabrizio."
-    f "Perfecto, ya llegó el último pibe. Seba, podemos arrancar."
-    s "Bueno muchachos, hoy se juegan cambiar sus vidas."
+    u "Hola buenas soy Ulises, vengo por lo de la oferta del señor Fabrizio."
+    f "Ok joya ahí llegó el último pibe, Seba ya están todos, podemos arrancar."
+    s "Bueno muchachos, hoy se juegan el cambiar sus vidas intentando entrar al equipo de la reserva."
 
     centered "Pasaron 15 minutos de charla."
-
-    u "Al fin terminaron de hablar, ya arranca el partido."
-    
+    scene ulisessolo
+    with fade
+    u "Al fin terminaron de hablar ya en nada arranca el partido."
+    scene chicosmolestan
+    with fade
     # 🛑 Detenemos el audio al pasar a la siguiente escena
     $ renpy.music.stop(channel="music", fadeout=1.0)
-
-    c1 "Eh vos, negrito, ¿qué hacés acá? ¿Te perdiste?"
-    c2 "Sí, villerito, tomatelas que este no es lugar para vos."
+    c1 "Eh vos, negrito, ¿Qué hacés acá? ¿Te perdiste? Jajajaja. Mi nombre es Nahuel, acordátelo que en un tiempo me vas a ver en el Real Madryn."
+    c2 "Sí, villerito, tomate el palo que este no es lugar para vos"
 
     menu:
         "Ignorar y seguir":
@@ -282,16 +311,16 @@ label escena5:
         "Responderles y discutir":
             jump discutir
 
-
 label ignorar:
-
+    scene chicosmolestan
     u "Ajá, seguro. Nos vemos en el partido."
 
     jump escena6
 
 
 label discutir:
-
+    scene ultilt
+    with fade
     u "¿Tienen algun problema? Yo se los soluciono a la salida del predio ¿Les parece?"
     nl "Mira, ¿que te parece si lo solucionamos dentro del partido? Porque de vos no nos confiamos a la salida, mira si nos sacas una faka."
     u "Bueno dale, más te vale jugar como dinho porque sino sos pollo."
@@ -304,19 +333,19 @@ label discutir:
 # =========================================
 
 label escena6:
-    scene partido
+    scene partido_1
     with fade
-    play ambient "audio/ambiente_cancha.mp3" loop
-
+    $ renpy.music.play("audio/ambiente_cancha.mp3", loop=True, channel="music")
     u "¡EH PASALA ACÁ, ESTOY SOLO!"
-
     nl "Ni en pedo villero, este partido es todo mío."
 
-    # 🔊 Sonido de pelotazo
+    # 🔊 Sonido de golpe (falta)
     $ renpy.music.play("audio/pelotazo.mp3", channel="sound")
     $ renpy.pause(1.0)
     $ renpy.music.stop(channel="sound")
 
+    scene partido_2
+    with fade
     nl "¡NO! LA PUTA MADRE LA PERDÍ, NEGRO SACÁSELA, NO SEAS INÚTIL."
     u "¡Sí, sí! ¡Es mía!"
 
@@ -327,8 +356,15 @@ label escena6:
 
     centered "Golpeas a un jugador y se genera una falta."
 
-    u "¡NO! Fue sin querer, perdón, perdón posta, perdón, no lo hice a propósito."
+    scene partido_falta
+    with fade
+    
+    u "¡NO! Fue sin querer perdón, perdón posta perdón, no lo hice a posta."
 
+    # 🔊 silbato
+    $ renpy.music.play("audio/silbatofalta.mp3", channel="sound")
+    $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="sound")         
     ar "¡FOUL! Tiro libre para el equipo rojo."
 
     centered "Lanzan el tiro libre y se va afuera. Termina el primer tiempo."
@@ -342,7 +378,7 @@ label escena7:
     $ renpy.music.stop(channel="sound", fadeout=1.0)
 
     # 🎬 Escena vestuario con murmullos de fondo
-    scene vestuario
+    scene vestuario_reganiado 
     with fade
 
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
@@ -375,7 +411,8 @@ label escena7:
 # =========================================
 
 label vestuario_responder:
-
+    scene vestuario_listadenombres_preocupado
+    with fade 
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
 
     u "No, pero profe, mire, esto no fue as..."
@@ -400,18 +437,19 @@ label vestuario_responder:
 # =========================================
 
 label vestuario_callado:
-
+    scene vestuario_reganiado
+    with fade
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
 
     u "Está bien, profe, perdón. No va a pasar de vuelta."
-
+    $ renpy.music.stop(channel="music", fadeout=1.0)
+    
     # 🔊 Sonido de sollozos
     $ renpy.music.play("audio/sollozos.mp3", channel="sound")
-    $ renpy.music.stop(channel="sound")
-
+    scene vestuario_solo
+    with fade
     u "La puta madre, no me sale una... quiero jugar mejor y quedar, la puta madre, Dios, por favor. Lo único que puedo hacer es jugar a mi habilidad, pero tengo miedo. ¿Y si no quedo? ¿Qué voy a hacer de mi vida si no lo consigo? ¡TENGO QUE JUGÁRMELA!"
-
-    $ renpy.music.stop(channel="music", fadeout=1.0)
+    $ renpy.music.stop(channel="sound") 
 
     scene black
     with fade
@@ -422,15 +460,14 @@ label vestuario_callado:
 
 label escena9:
 
-    scene cancha
+    scene partido_3
     with fade
-
-    $ renpy.music.play("audio/ambiente_cancha.mp3", loop=True, channel="music")
-
+    $ renpy.music.play("audio/sonidorespiracion.mp3", channel="sound")
+    $ renpy.pause(1.0)
     u "Okay, tengo la pelota... No puedo desperdiciar esta oportunidad. ¿Qué me conviene hacer?"
-
+    $ renpy.music.stop(channel="sound")
     # 🔹 Decisiones del jugador
-    menu:
+    menu(time=3.5, timeout="opcion_pase_largo"):
         "Amagar al jugador más cercano y pegarle al arco":
             jump opcion_amagar
         "Dar un pase largo al 8":
@@ -438,24 +475,28 @@ label escena9:
         "Dar un pase corto al 9 para que pivotee y te devuelva el pase":
             jump opcion_pase_corto
 
-
 # =========================================
 # ESCENA 9A - AMAGAR Y PEGARLE AL ARCO
 # =========================================
 
 label opcion_amagar:
-
+    scene partido_4
+    with fade
+    # 🔊 Sonido de golpe (falta)
+    $ renpy.music.play("audio/pelotazo.mp3", channel="sound")
+    $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="sound")
+    # 🔊 silbato
+    $ renpy.music.play("audio/silbatofalta.mp3", channel="sound")
+    $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="sound")    
     u "¡Movete, este partido es mío!"
 
-    j7 "¡Qué hacés! ¡Profe, lo tenés que sacar!"
-
-    $ renpy.sound.play("audio/gritos.mp3")
+    j7 "¡Qué hacés! ¡Profe, lo tenés que sacar!"    
 
     u "No... no, no, no, fue sin querer... lo juro, no fue a propósito."
 
-    "FADE IN: Zoom a la cara de un chico inconsciente."
-
-    n "¡ASESINO! ¡SOS UN ASESINO, LO MATASTE!"
+    nl "¡ASESINO! ¡SOS UN ASESINO, LO MATASTE!"
 
     u "Yo... no lo hice a propósito, fue un accidente."
 
@@ -468,7 +509,7 @@ label opcion_amagar:
     scene black
     with fade
 
-    centered "FINAL MALO"
+    centered "{size=45}{b}FINAL MALO{/b}{/size}"
 
     $ renpy.music.stop(channel="music", fadeout=1.0)
     return
@@ -479,10 +520,21 @@ label opcion_amagar:
 # =========================================
 
 label opcion_pase_largo:
+    scene partido_5
+    with fade
 
     u "¡Número 8, va larga!"
+    $ renpy.music.play("audio/paselargo.ogg", channel="sound")
+    $ renpy.pause(3.0)
+    $ renpy.music.stop(channel="sound", fadeout=1.0)
+
+    scene partido_6
+    with fade
 
     j7 "¡Qué hacés! ¿Qué es ese pase? ¡Profe, lo tenés que sacar!"
+
+    scene partido_7
+    with fade
 
     s "Vos... ¿cómo te llamabas? ¿Uriel? Vení para acá."
 
@@ -497,9 +549,7 @@ label opcion_pase_largo:
     scene black
     with fade
 
-    centered "FINAL MALO"
-
-    $ renpy.music.stop(channel="music", fadeout=1.0)
+    centered "{size=45}{b}FINAL MALO{/b}{/size}"
     return
 
 # =========================================
@@ -507,14 +557,36 @@ label opcion_pase_largo:
 # =========================================
 
 label opcion_pase_corto:
+    scene partido_8
+    with fade
     u "Locura, tomá. ¡Devolvé rápido!"
     d "Bueno, más te vale que nos salga bien, ¿me escuchaste?"
     u "Confiá en mí."
+    scene partido_9
+    with fade
     u "Bueno, ahora te toca a vos, 7. ¡Corré que va larga!"
     j7 "¡De una!"
+    scene partido_11
+    with fade
+    $ renpy.music.play("audio/paselargo.ogg", channel="sound")
+    $ renpy.pause(3.0)
+    $ renpy.music.stop(channel="sound", fadeout=1.0)
     u "¡Ahí va!"
+    scene partido_12
+    with fade    
     j7 "¡Es mía, va el centro rápido!"
+    $ renpy.music.play("audio/paselargo.ogg", channel="sound")
+    $ renpy.pause(3.0)
+    $ renpy.music.stop(channel="sound", fadeout=1.0)
+    scene partido_13
+    with fade
     d "Le pego y... ¡AHHHHHHHHH, ES PENAL JUEZ LO TENÉS QUE ECHAR!"
+    scene partido_14
+    with fade
+    # 🔊 silbato
+    $ renpy.music.play("audio/silbatofalta.mp3", channel="sound")
+    $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="sound")        
     ar "¡PENAL PARA LOS DE AZUL!"
     u "Lo pateo yo equipo, confíen en mí."
 
@@ -532,7 +604,12 @@ label penal_minijuego:
     $ renpy.music.stop(channel="sound", fadeout=0.3)
     scene bg_penal
     "Elegí dónde patear. Hacé click en una zona."
-
+# 🔊 silbato
+    $ renpy.music.play("audio/silbatopatear.mp3", channel="sound")
+    $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="sound")
+    $ renpy.music.play("audio/sonidorespiracion.mp3", channel="sound")
+    $ renpy.pause(1.0)
     show screen penal_selector
     $ zona = ui.interact()
     hide screen penal_selector
@@ -548,7 +625,7 @@ label penal_minijuego:
 # =========================================
 label penal_gol:
     $ renpy.music.play("audio/gol.mp3", channel="sound")
-    scene cancha_gol with fade
+    scene partido_gol_festejo with fade
     centered "{size=46}{b}¡GOOOOOOOOOOOOOL!{/b}{/size}"
     $ renpy.pause(1.0)
     jump escena_10A
@@ -559,7 +636,7 @@ label penal_gol:
 # =========================================
 label penal_errado:
     $ renpy.music.play("audio/fallo.mp3", channel="sound")
-    scene cancha_errado with fade
+    scene partido_15 with fade
     centered "{size=40}{b}¡ERRASTE!{/b}{/size}"
     $ renpy.pause(1.0)
     jump escena_10B
@@ -570,10 +647,12 @@ label penal_errado:
 # =========================================
 label escena_10A:
     $ renpy.music.play("audio/ambiente_cancha.mp3", loop=True, channel="music")
-    scene cancha_gol with fade
+    scene partido_gol_festejo with fade
     u "¡GOOOOOOOOOOOOOL, VAAAAAAAAMOOOOOS!"
     u "¡SEEEEE! Estoy seguro de que con esto lo logré y voy a poder salir de los barrios."
     $ renpy.pause(1.0)
+    $ renpy.music.stop(channel="music", fadeout=0.3)
+
     jump escena_11
 
 
@@ -582,15 +661,18 @@ label escena_10A:
 # =========================================
 label escena_10B:
     $ renpy.music.play("audio/ambiente_cancha.mp3", loop=True, channel="music")
-    scene cancha_errado with fade
+    scene partido_15 
+    with fade
     u "No... No lo puedo creer, por favor Dios, decime que no."
+    scene partido_16 
+    with fade
     s "Era tu última oportunidad pibe y la arruinaste."
-    s "Olvidate de todos tus sueños, no pudiste meter un simple penal y querías llegar a primera."
-    u "Yo... yo solo quería sacar adelante a mi mamá, por favor señor déjeme una última oportunidad."
-    s "No pibe, no entendés. No hay más oportunidades. Era la última y la desperdiciaste."
+    s "Olvidate de todos tus sueños y esperanzas, no pudiste meter un simple penal y querías llegar a primera, mamadera al pedo te hiciste ilusiones."
+    u "Yo... yo solo quería sacar adelante a mi mamá, por favor señor déjeme una última oportunidad, se lo juro que no la voy a embarr..."
+    s "No pibe, no entendés. No hay más oportunidades. Era la última y la desperdiciaste, que triste ser tu Madre por tener una decepción como vos."
     $ renpy.pause(1.0)
     scene black with fade
-    centered "{size=45}{b}Final malo{/b}{/size}"
+    centered "{size=45}{b}FINAL MALO{/b}{/size}"
     $ renpy.pause(1.2)
     return
 
@@ -598,12 +680,15 @@ label escena_10B:
 # =========================================
 # SCREEN DEL MINIJUEGO DE PENAL
 # =========================================
-screen penal_selector():
+screen penal_selector(time_limit=15.0):   # podés cambiar los segundos
     tag penal
     zorder 100
 
-    add "images/bg_penal.png"
+    # --- TIMER QUE DEFINE EL TIMEOUT ---
+    timer time_limit action Return("izquierda")
 
+    add "images/bg_penal.png"
+    
     # === IZQUIERDA ===
     imagebutton:
         idle Transform("gui/circle_empty.png", zoom=0.2)
@@ -631,7 +716,7 @@ screen penal_selector():
     frame:
         background None
         xalign 0.5
-        yalign 0.93
+        yalign 0.05
         text "{size=40}{b}Elegí tu disparo{/b}{/size}" xalign 0.5 yalign 0.5 color "#FFFFFF"
 
     $ renpy.music.play("audio/ambiente_cancha.mp3", loop=True, channel="music")
@@ -642,9 +727,9 @@ screen penal_selector():
 # ESCENA 11 - VESTUARIO - NOCHE
 # ==========================
 
-label escena_11:
+label escena_11: 
 
-    scene vestuario_saintlawrence_noche
+    scene vestuario_listadenombres_preocupado
     with fade
 
     s "Bueno, después de estas pruebas empezaré a nombrar a los 8 jugadores que lograron cumplir mis expectativas y las del club."
@@ -655,9 +740,15 @@ label escena_11:
 
     s "Nahuel, Diego... y por último... Uriel."
 
+    scene vestuario_listadenombres_triste
+    with fade
+
     u "¿Qué...? No, no pued..."
 
     s "Perdón, me equivoqué otra vez. Ulises, ahora sí. Bueno, esos serían los que quedaron para las inferiores. Felicitaciones. Los demás ya se pueden ir a sus casas."
+
+    scene vestuario_listadenombres_feliz
+    with fade
 
     u "(¡¡SÍIIII, LO CONSEGUÍ!! No lo puedo creer... voy a salir de los barrios bajos al fin.)"
 
@@ -669,6 +760,7 @@ label escena_11:
     scene black
     with fade
 
-    centered "FINAL BUENO.\n¿CONTINUARÁ?"
+    centered "{size=45}{b}FINAL BUENO.\n¿CONTINUARÁ? {/b}{/size}"
+
 
     return
