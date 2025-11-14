@@ -2,20 +2,26 @@
 # CONFIGURACIÓN DE PERSONAJES
 # =========================================
 
-define a = Character("Alberto", color="#1E90FF")       # Azul
-define m = Character("Marido", color="#FFA500")        # Naranja
-define d1 = Character("Doctor 1", color="#4CAF50")  # Verde
-define d2 = Character("Doctor 2", color="#9C27B0")  # Violeta
-define u = Character("Ulises", color="#00BFFF")     # Celeste
-define n = Character("Noelia", color="#FF69B4")     # Rosa claro
-define f = Character("Fabrizio", color="#FFD700")   # Amarillo
-define s = Character("Sebastián", color="#8B0000")  # Rojo oscuro
-define c1 = Character("Chico 1", color="#ADFF2F")   # Verde claro
-define c2 = Character("Chico 2", color="#7FFFD4")   # Aguamarina
-define nl = Character("Nahuel", color="#6d332b") # Verde oscuro
-define ar = Character("Árbitro", color="#5a4d4d") # Beige
-define d = Character("Delantero", color="#5e68a5") # Beige
-define j7 = Character("Jugador 7", color="#393d7a") # Beige
+image video_menu = Movie(play="videos/fondo_menu.webm", loop=True, size=(1152,768))
+
+
+define a = Character("Alberto", color="#1E90FF")       
+define m = Character("Marido", color="#FFA500")        
+define d1 = Character("Doctor 1", color="#4CAF50") 
+define d2 = Character("Doctor 2", color="#9C27B0")  
+define u = Character("Ulises", color="#00BFFF")   
+define n = Character("Noelia", color="#FF69B4")     
+define f = Character("Fabrizio", color="#FFD700")   
+define s = Character("Sebastián", color="#8B0000")  
+define c1 = Character("Chico 1", color="#ADFF2F")   
+define c2 = Character("Chico 2", color="#7FFFD4")  
+define nl = Character("Nahuel", color="#6d332b") 
+define ar = Character("Árbitro", color="#5a4d4d") 
+define d = Character("Delantero", color="#5e68a5") 
+define j7 = Character("Jugador 7", color="#393d7a")
+define mp = Character("Mujer pariendo", color="#52254c")
+define mdn = Character("Madre del niño", color="#b176a9")
+define mam = Character("Mamá", color="#3d333c") 
 define narrator = Character(None) # Narrador sin nombre
 
 # =========================================
@@ -77,7 +83,7 @@ label start:
     # 🔊 Grito de mujer — detenemos murmullos antes de reproducirlo
     $ renpy.music.stop(channel="music", fadeout=1.5)
     $ renpy.music.play("audio/gritos_mujer.mp3", channel="sound")
-    n "¡¡¡AHHHH!!!... ¡Cómo duele, por favor que termine esto rápido, por el amor de Dios!"
+    mp "¡¡¡AHHHH!!!... ¡Cómo duele, por favor que termine esto rápido, por el amor de Dios!"
     $ renpy.music.stop(channel="sound")
 
     "Tu vida pende de un hilo..."
@@ -104,15 +110,15 @@ label luchar:
     with fade
 
     $ renpy.music.play("audio/bebe_llorando.mp3", channel="sound")
-    n "Ahhh, qué alivio. Qué lindo es, por Dios, lo amo."
+    mp "Ahhh, qué alivio. Qué lindo es, por Dios, lo amo."
     $ renpy.music.stop(channel="sound")
 
-    n "Mirá Alberto, qué lindo es nuestro nene."
+    mp "Mirá Alberto, qué lindo es nuestro nene."
 
     scene hospital_alberto
     with dissolve
 
-    a "Qué bien, Noelia... Más le vale al pendejo este sacarnos adelante, ¡Jajaja"
+    a "Qué bien, Noelia... Más le vale al pendejo este sacarnos adelante, ¡Jajaja!"
 
     scene black
     with fade
@@ -132,14 +138,14 @@ label rendirse:
 
     d1 "Señora, lamentamos informarle que su hijo falleció. Nuestras más sinceras condolencias."
 
-    n "¡¡NOOOOOO!! No me pueden estar diciendo esto, por favor, tiene que ser mentira. ¿O no es un chiste, Alberto?"
+    mdn "¡¡NOOOOOO!! No me pueden estar diciendo esto, por favor, tiene que ser mentira. ¿O no es un chiste, Alberto?"
 
     a "Ni me hables, mujer. Un solo trabajo tenías: Dar a luz a mi futuro, y no lo hiciste. No te quiero volver a ver en mi vida."
 
     scene noelia_doc
     with fade
    
-    n "¡Alberto, volvé! Te necesito. Tu hijo sigue acá, te lo juro. ¡Es todo una mentira de los doctores! ¿O no, doctor?"
+    mdn "¡Alberto, volvé! Te necesito. Tu hijo sigue acá, te lo juro. ¡Es todo una mentira de los doctores! ¿O no, doctor?"
 
     d2 "... Mis más sinceras condolencias, señora. La dejaremos sola para que pueda procesar todo lo que está pasando."
 
@@ -163,7 +169,7 @@ label escena2:
     play ambient "audio/murmullos.ogg" loop
 
     u "Bueno ma, me voy a la cancha a jugar con los chicos."
-    n "Bueno hijo, que te vaya bien y lo disfrutes. Te amo."
+    mam "Bueno hijo, que te vaya bien y lo disfrutes. Te amo."
     u "Dale ma, gracias. Te amo mucho."
 
 
@@ -184,7 +190,7 @@ label escena2:
     with fade
 
     u "¿Qué onda locuras? ¿Sale un fulbito?"
-    c1 "¡Eh Ulise', cómo andás! Más vale perri, metete al equipo de Lucas."
+    c1 "¡Eh Ulise'! ¿Cómo andás? ¡Más vale, perri! Metete al equipo de Lucas."
 
     u "¿Qué onda con ese loco de ahí? Está raro y le está hablando a uno de los pibes."
     c2 "Ni idea amigo, vos seguí jugando que estás jugando re piola."
@@ -214,7 +220,7 @@ label escena2:
 label aceptar_trato:
     scene cancham
     with fade
-    u "Bueno señor Fabrizio, acepto el trato. ¿Cuándo arranco a jugar?"
+    u "Bueno, señor Fabrizio, acepto el trato. ¿Cuándo arranco a jugar?"
     f "Tranquilo pibe no te apures, primero andá a tu casa, pegate un baño, y yo te llamo. Pasame tu teléfono. Te aviso que las pruebas son el próximo lunes."
     u "Bueno, dale. Mi número es este."
     centered "Una semana después..."
@@ -257,7 +263,7 @@ label escena4:
 
     a "Noelia me tené’ cansao' con la mierda ezta que no me dejás tomarme una birrita con los pibes."
     n "Disculpá que no me guste ver al boludo de mi marido como un linyera en pedo."
-    a "¡Vos y tu pendejo de mierda me tienen las bolas al plato, Mujer!"
+    a "¡Vos y tu pendejo de mierda me tienen las bolas al plato, mujer!"
     a "¡El fracasado ese que se cree que va a ser futbolista, y vos que no me dejás hacer nada!"
 
     scene casatilt
@@ -412,7 +418,7 @@ label vestuario_responder:
     with fade 
     $ renpy.music.play("audio/murmullos.ogg", loop=True, channel="music")
 
-    u "No, pero profe, mire, esto no fue as..."
+    u "No, pero profe, mire esto no fue as..."
 
     s "¡Qué mierda me importa cómo creés que fue! Yo desde el banco vi que le pegaste santa patada. Una vez más que me contestás y te echo del partido, ¿me escuchaste?"
 
@@ -421,6 +427,13 @@ label vestuario_responder:
     s "Más te vale, pendejo. Ya sabés lo que te va a pasar si lo volvés a hacer."
 
     $ renpy.music.stop(channel="music", fadeout=1.0)
+
+# 🔊 Sonido de sollozos
+    $ renpy.music.play("audio/sollozos.mp3", channel="sound")
+    scene vestuario_solo
+    with fade
+    u "La puta madre, no me sale una... Quiero jugar mejor y quedar, la puta madre, Dios, por favor. Lo único que puedo hacer es jugar a mi habilidad, pero tengo miedo. ¿Y si no quedo? ¿Qué voy a hacer de mi vida si no lo consigo? ¡TENGO QUE JUGÁRMELA!"
+    $ renpy.music.stop(channel="sound") 
 
     scene black
     with fade
@@ -445,7 +458,7 @@ label vestuario_callado:
     $ renpy.music.play("audio/sollozos.mp3", channel="sound")
     scene vestuario_solo
     with fade
-    u "La puta madre, no me sale una... quiero jugar mejor y quedar, la puta madre, Dios, por favor. Lo único que puedo hacer es jugar a mi habilidad, pero tengo miedo. ¿Y si no quedo? ¿Qué voy a hacer de mi vida si no lo consigo? ¡TENGO QUE JUGÁRMELA!"
+    u "La puta madre, no me sale una... Quiero jugar mejor y quedar, la puta madre, Dios, por favor. Lo único que puedo hacer es jugar a mi habilidad, pero tengo miedo. ¿Y si no quedo? ¿Qué voy a hacer de mi vida si no lo consigo? ¡TENGO QUE JUGÁRMELA!"
     $ renpy.music.stop(channel="sound") 
 
     scene black
@@ -528,12 +541,12 @@ label opcion_pase_largo:
     scene partido_6
     with fade
 
-    j7 "¡Qué hacés! ¿Qué es ese pase? ¡Profe, lo tenés que sacar!"
+    j7 "¿¡Qué hacés, qué es ese pase!? ¡Profe, lo tenés que sacar!"
 
     scene partido_7
     with fade
 
-    s "Vos... ¿cómo te llamabas? ¿Uriel? Vení para acá."
+    s "Vos... ¿Cómo te llamabas? ¿Uriel? Vení para acá."
 
     u "¿Yo, profe?"
 

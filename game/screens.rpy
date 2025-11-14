@@ -352,10 +352,10 @@ style navigation_button_text:
 
 screen main_menu():
 
+    add "video_menu"
+
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
-
-    add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.
     frame:
