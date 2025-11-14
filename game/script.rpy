@@ -254,7 +254,6 @@ label rechazar_trato:
 label escena4:
     $ renpy.music.stop(channel="sound")
     scene casana
-    play ambient "audio/gritos_discusion.mp3" loop
     with fade
 
     a "Noelia me tené’ cansao' con la mierda ezta que no me dejás tomarme una birrita con los pibes."
@@ -262,7 +261,6 @@ label escena4:
     a "¡Vos y tu pendejo de mierda me tienen las bolas al plato, Mujer!"
     a "¡El fracasado ese que se cree que va a ser futbolista, y vos que no me dejás hacer nada!"
 
-    stop ambient
     scene casatilt
     with fade
     u "Bueno, que me bardees a mí me da lo mismo, pero con mamá no, viejo de mierda"
